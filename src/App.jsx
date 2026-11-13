@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Super sticky notes is on its way!</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => (
+   <div className="app">
+    <header className="app-header">
+      <h1 className="app-header__title">Super Sticky Notes</h1>
+      <aside className="app-header__controls">
+        <button className="add-new">+ New Note</button>
+        <div className="search-field">
+          <img
+            src="magnifying-glass-solid-full.svg"
+            alt="search icon"
+            className="search-icon"
+          />
+          <label className="visually-hidden" htmlFor="search">
+            Search notes
+          </label>
+          <input
+            type="text"
+            id="search"
+            placeholder="ToDo"
+            className="search"
+          />
+        </div>
+      </aside>
+    </header>
+    <ul className="notes-list">
+      <li className="note">
+        <input
+          type="text"
+          aria-label="Title"
+          placeholder="ToDo Today"
+          className="note__title"
+        />
+        <textarea
+          aria-label="Description"
+          placeholder="Take a nap!"
+          className="note__description"
+        />
+        <span className="note__delete">X</span>
+      </li>
+      <li className="note">
+        <input
+          type="text"
+          aria-label="Title"
+          placeholder="ToDo Today"
+          className="note__title"
+        />
+        <textarea
+          aria-label="Description"
+          placeholder="Take a nap!"
+          className="note__description"
+        />
+        <span className="note__delete">X</span>
+      </li>
+      <li className="note">
+        <input
+          type="text"
+          aria-label="Title"
+          placeholder="ToDo Today"
+          className="note__title"
+        />
+        <textarea
+          aria-label="Description"
+          placeholder="Take a nap!"
+          className="note__description"
+        />
+        <span className="note__delete">X</span>
+      </li>
+    </ul>
+  </div>
+ 
+);
 
 export default App
