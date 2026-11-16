@@ -1,4 +1,4 @@
-function Header () {
+function Header (props) {
       return (
       <header className="app-header">
       <h1 className="app-header__title">Super Sticky Notes</h1>
@@ -13,7 +13,7 @@ function Header () {
           <label className="visually-hidden" htmlFor="search">
             Search notes
           </label>
-          <input
+          <input value={props.searchText}
             type="text"
             id="search"
             placeholder="ToDo"

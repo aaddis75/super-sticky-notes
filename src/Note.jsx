@@ -1,13 +1,13 @@
-function Note () {
+function Note (props) {
     return (
          <li className="note">
-        <input
+        <input value={props.note.title}
           type="text"
           aria-label="Title"
           placeholder="ToDo Today"
           className="note__title"
         />
-        <textarea
+        <textarea value={props.note.description}
           aria-label="Description"
           placeholder="Take a nap!"
           className="note__description"
