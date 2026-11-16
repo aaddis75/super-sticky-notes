@@ -1,9 +1,11 @@
-function Header (props) {
-      return (
-      <header className="app-header">
+function Header(props) {
+  return (
+    <header className="app-header">
       <h1 className="app-header__title">Super Sticky Notes</h1>
       <aside className="app-header__controls">
-        <button className="add-new">+ New Note</button>
+        <button className="add-new" onClick={props.addNote}>
+          + New Note
+        </button>
         <div className="search-field">
           <img
             src="magnifying-glass-solid-full.svg"
@@ -13,7 +15,8 @@ function Header (props) {
           <label className="visually-hidden" htmlFor="search">
             Search notes
           </label>
-          <input value={props.searchText}
+          <input
+            value={props.searchText}
             type="text"
             id="search"
             placeholder="ToDo"
@@ -22,7 +25,7 @@ function Header (props) {
         </div>
       </aside>
     </header>
-      );
+  );
 }
 
 export default Header;
