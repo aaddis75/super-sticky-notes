@@ -16,7 +16,7 @@ function Header(props) {
             Search notes
           </label>
           <input
-            value={props.searchText}
+           
             type="text"
             id="search"
             placeholder="ToDo"

@@ -2,7 +2,7 @@ import Note from "./Note";
 
 function NotesList(props) {
   function renderNote(note) {
-    return <Note note={note} key={note.id} />;
+    return <Note note={note} key={note.id} onType={props.onType}/>;
   }
   function keepSearchMatches(note) {
     return note.doesMatchSearch;

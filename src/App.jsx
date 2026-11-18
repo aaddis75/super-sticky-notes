@@ -5,12 +5,14 @@ import { Component } from "react";
 
 class App extends Component {
   state = {
-    notes: [{
-      id: Date.now(),
-      title: "",
-      description: "",
-      doesMatchSearch: true,
-  }],
+    notes: [
+      {
+        id: Date.now(),
+        title: "",
+        description: "",
+        doesMatchSearch: true,
+      },
+    ],
     searchText: "",
   };
 
@@ -29,11 +31,28 @@ class App extends Component {
     });
   };
 
+  onType = (id, property, value) => {
+    const updatedNotes = this.state.notes.map((note) => {
+      if (note.id === id) {
+        return {
+          ...note,
+          [property]: value,
+        };
+      } else {
+        return note;
+      }
+    });
+
+    this.setState({
+      notes: updatedNotes,
+    });
+  };
+
   render() {
     return (
       <div className="app">
         <Header searchText={this.state.searchText} addNote={this.addNote} />
-        <NotesList notes={this.state.notes} />
+        <NotesList notes={this.state.notes} onType={this.onType}/>
       </div>
     );
   }
