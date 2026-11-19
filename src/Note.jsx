@@ -2,7 +2,7 @@ function Note(props) {
   function updateTitle(event) {
     const updatedValue = event.target.value;
     const editMeId = props.note.id;
-    props.onType(editMeId, "title", updatedValue)
+    props.onType(editMeId, "title", updatedValue);
   }
 
   function updateDescription(event) {
@@ -10,6 +10,10 @@ function Note(props) {
     const editMeId = props.note.id;
     props.onType(editMeId, "description", updatedValue);
   }
+
+function clickDelete() {
+  props.deleteNote(props.note.id);
+}
 
   return (
     <li className="note">
@@ -28,7 +32,12 @@ function Note(props) {
         placeholder="Take a nap!"
         className="note__description"
       />
-      <span className="note__delete">X</span>
+      <span
+        className="note__delete"
+        onClick={clickDelete}
+      >
+        X
+      </span>
     </li>
   );
 }
